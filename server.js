@@ -28,7 +28,7 @@ app.get('/currency', function(req, res){
     var newArr = resp.data.map(({symbol, timestamp, volume})=> (
       {symbol, timestamp, volume}
     ))
-    console.log(newArr)
+  //  console.log(newArr)
       // this.setState({
       //   arr: resp
       // })

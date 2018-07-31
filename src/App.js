@@ -31,7 +31,7 @@ class App extends Component {
       })
       // .then((res)=>res.json())
       .then((resp)=>{
-        console.log(resp.data)
+      //console.log(resp.data)
           this.setState({
             arr: resp.data
           })
@@ -51,9 +51,11 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
+
         <ul>
-          {this.state.arr.map((m)=><li>{m.symbol}: {m.volume}</li>)}
+          {this.state.arr.map((m)=><li key={m.symbol}>{m.symbol}: {m.volume}</li>)}
         </ul>
+
       </div>
     );
   }
