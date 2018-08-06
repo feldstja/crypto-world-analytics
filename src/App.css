@@ -26,3 +26,31 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
+.thing {
+  border: 1px solid black;
+  padding: 2px;
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: skyblue;
+}
+
+.thing:hover {
+  background-color: aqua;
+}
+
+.otherThing {
+  color: red;
+}
+
+.symbol {
+  font-weight: bold;
+}
+
+.info {
+  display: inline
+}
+
+.sorting {
+  display: inline-block;
+}

@@ -25,13 +25,9 @@ app.get('/currency', function(req, res){
     mode: 'no-cors'
   })
   .then((resp)=>{
-    var newArr = resp.data.map(({symbol, timestamp, volume})=> (
-      {symbol, timestamp, volume}
+    var newArr = resp.data.map(({symbol, timestamp, volumeQuote})=> (
+      {symbol, timestamp, volumeQuote}
     ))
-  //  console.log(newArr)
-      // this.setState({
-      //   arr: resp
-      // })
       res.json(newArr)
   }).catch(function(err) {
     console.log('ERROR:', err)
