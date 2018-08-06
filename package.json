@@ -2,25 +2,37 @@
   "name": "cryptoworldanalytics",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:1337",
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.1.5",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
     "body-parser": "^1.18.3",
+    "css-loader": "^1.0.0",
     "express": "^4.16.3",
+    "mongoose": "^5.2.6",
+    "node-sass": "^4.9.2",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
-    "react-scripts": "1.1.4"
+    "react-scripts": "1.1.4",
+    "sass-loader": "^7.1.0",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
+    "webpack": "^4.16.3"
   },
   "scripts": {
     "start": "node server.js",
-    "server": "nodemon server.js",
-    "react": "react-scripts start",
-    "dev": "react-scripts start | npm run server",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "frontend": "webpack -d --watch",
+    "backend": "nodemon server.js",
+    "dev": "concurrently -k \"npm run frontend\" \"npm run backend\""
   },
   "devDependencies": {
-    "nodemon": "^1.17.5"
+    "concurrently": "^3.6.1",
+    "nodemon": "^1.17.5",
+    "webpack-cli": "^3.1.0"
   }
 }
