@@ -129,7 +129,7 @@ socket.on('getCoins', (user)=>{
   var user2 = User.findById(user.id)
   if(user2){
     console.log('hey2')
-    
+
     socket.emit('usersCoins', user2.FocusedCurrencies)
   }
  })
