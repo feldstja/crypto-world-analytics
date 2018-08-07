@@ -51,7 +51,8 @@ redirect(page){
           : <Tools socket={this.state.socket}
             loggedin={this.state.loggedin}
             account={this.state.account}
-            goToTools={(userId)=>this.setState({loggedin: userId})}
+            goToTools={(userId)=>this.setState({loggedin: userId, account: true})}
+            signout={()=>this.setState({loggedin: ''})}
             goToLogin={()=>this.setState({account: true})}
             redirect={this.redirect.bind(this)}
             changeUser={this.changeUser.bind(this)}

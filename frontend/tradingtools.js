@@ -18,8 +18,10 @@ export default class Tools extends React.Component {
       personalIndex: [],
       sortingPersonal: 'AlphaUp',
       personalsearch: '',
+      //option is for organizing the currencies by their conversion (ETH, BTC, USD)
       option: '',
       personalOption: '',
+      user: '',
     }
   }
 
@@ -44,20 +46,29 @@ async componentWillMount(){
     }
   }
 
-  // currencyRemoved(obj) {
-  //   alert(`You're no longer tracking ${obj.symbol}.`)
-  //   this.props.socket.emit('remove', [obj])
-  // }
+  currencyRemoved(obj) {
+    alert(`You're no longer tracking ${obj.symbol}.`)
+    this.props.socket.emit('remove', obj)
+  }
 
   componentDidMount(){
-    var self = this
+    var self = this;
+
     this.props.socket.on('loginSuccess', function(user){
+      console.log('success')
+      localStorage.setItem("user", JSON.stringify(user));
       self.setState({
-        personalIndex: user.FocusedCurrencies
+        personalIndex: user.FocusedCurrencies,
+        user: user,
       })
-    })
-    console.log("PROPS.USER:", this.props.user)
-    this.props.socket.emit('getCoins', this.props.user);
+      self.props.goToTools(user._id)
+    });
+    var user = JSON.parse(localStorage.getItem("user") || 'null')
+    if (user) {
+      console.log('Triggered')
+      this.props.socket.emit('login', user)
+    }
+    // this.props.socket.emit('getCoins', this.props.user);
 
     // this.props.socket.on('usersCoins', function(data){
     //   console.log('hey there userCoins')
@@ -67,6 +78,39 @@ async componentWillMount(){
     //   })
     // })
     const intervalID = setInterval(() => {
+      axios("http://localhost:3000/ethtobtc", {
+        method: 'GET'
+      })
+      .then((resp)=>{
+        this.setState({
+          ethToBtc: resp.data
+        })
+      })
+      axios("http://localhost:3000/btctodai", {
+        method: 'GET'
+      })
+      .then((resp)=>{
+        this.setState({
+          daiToBtc: (1 / resp.data)
+        })
+      })
+      axios("http://localhost:3000/btctoeurs", {
+        method: 'GET'
+      })
+      .then((resp)=>{
+        this.setState({
+          eursToBtc: (1 / resp.data)
+        })
+      })
+      axios("http://localhost:3000/btctousd", {
+        method: 'GET'
+      })
+      .then((resp)=>{
+        this.setState({
+          usdToBtc: (1 / resp.data)
+        })
+      })
+
       // fetch('https://api.hitbtc.com/api/2/public/ticker', {
       //   mode: 'cors'
       //   method: 'GET',
@@ -86,7 +130,18 @@ async componentWillMount(){
       // .then((res)=>res.json())
       .then((resp)=>{
         var data = resp.data.sort((a, b)=> a.symbol > b.symbol)
-        //console.log(resp.data)
+        for(var i = 0; i < data.length; i++){
+          if(data[i].symbol.substr(data[i].symbol.length - 3) === 'ETH'){
+            data[i].volumeQuote = data[i].volumeQuote * this.state.ethToBtc
+          } else if(data[i].symbol.substr(data[i].symbol.length - 3)=== 'USD' ||
+            data[i].symbol.substr(data[i].symbol.length - 4)=== 'USDT'){
+              data[i].volumeQuote = data[i].volumeQuote * this.state.usdToBtc
+          } else if(data[i].symbol.substr(data[i].symbol.length - 3) === 'DAI'){
+            data[i].volumeQuote = data[i].volumeQuote * this.state.daiToBtc
+          } else if(data[i].symbol.substr(data[i].symbol.length - 4) === 'EURS'){
+            data[i].volumeQuote = data[i].volumeQuote * this.state.eursToBtc
+          }
+        }        //console.log(resp.data)
         this.setState({
           arr: data,
           history: this.state.history.concat([data])
@@ -128,14 +183,17 @@ async componentWillMount(){
       console.log(self.state.personal)
     })
 
+    this.props.socket.on('removalSuccess', function(data){
+      var jonSucks = self.state.personalIndex.slice();
+      jonSucks.splice(data, 1)
+      self.setState({
+        personalIndex: jonSucks
+      })
+    })
   }
 
-  // this.props.socket.on('removalSuccess', function(data){
-  //   this.setState({
-  //     personal: this.state.personal.splice(data, 1)
-  //   })
-  // })
-  // }
+
+
 
   render() {
     let array = this.state.arr.map((m, i)=> ({
@@ -223,15 +281,18 @@ async componentWillMount(){
 
     return (
       <div className="App">
-        <div>
-          <button onClick={() => this.props.redirect(0)}>Home</button>
-          <button onClick={() => this.props.redirect(1)}>About Crypto</button>
-          <button onClick={() => this.props.redirect(2)}>How To Start</button>
-          <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
-          <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
-          <button onClick={() => this.props.redirect(5)}>FAQ</button>
-        </div>
-        { (this.props.account && this.props.loggedin) ?
+        {
+          (this.props.account && this.props.loggedin) ?
+          <div>
+          <div>
+            <button onClick={() => this.props.redirect(0)}>Home</button>
+            <button onClick={() => this.props.redirect(1)}>About Crypto</button>
+            <button onClick={() => this.props.redirect(2)}>How To Start</button>
+            <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+            <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
+            <button onClick={() => this.props.redirect(5)}>FAQ</button>
+            <button onClick={() => this.props.signout()}>Log Out</button>
+          </div>
           <div className="currencydisplay">
             <div className="container">
               <p> {array.length} total currencies. </p>
@@ -303,6 +364,7 @@ async componentWillMount(){
                 <button onClick={()=>this.currencyRemoved(obj)}>Remove</button>
               </div> )}
             </div>
+          </div>
           </div>
           : (this.props.account) ? <Login socket={this.props.socket}
             goToTools={this.props.goToTools}

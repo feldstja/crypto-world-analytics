@@ -4,21 +4,21 @@ export default class Register extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      username: '',
+      Username: '',
       PhoneNumber: '',
-      password: '',
-      passwordRepeat: ''
+      Password: '',
+      PasswordRepeat: ''
     }
   }
 
     register(){
       this.props.socket.emit('register', {
-          username: this.state.username,
+          Username: this.state.Username,
           PhoneNumber: this.state.PhoneNumber,
-          password: this.state.password,
-          passwordRepeat: this.state.passwordRepeat,
+          Password: this.state.Password,
+          PasswordRepeat: this.state.PasswordRepeat,
         });
-      if (this.state.username && this.state.PhoneNumber && this.state.password && this.state.passwordRepeat) {
+      if (this.state.Username && this.state.PhoneNumber && this.state.Password && this.state.PasswordRepeat) {
         this.props.goToLogin();
       }
     }
@@ -33,38 +33,47 @@ export default class Register extends React.Component {
   render() {
     return (
       <div>
+      <div>
+        <button onClick={() => this.props.redirect(0)}>Home</button>
+        <button onClick={() => this.props.redirect(1)}>About Crypto</button>
+        <button onClick={() => this.props.redirect(2)}>How To Start</button>
+        <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+        <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
+        <button onClick={() => this.props.redirect(5)}>FAQ</button>
+      </div>
+      <div>
         <h1>Register</h1>
         <div className="form-group">
           <label>Username: </label>
           <input type="text"
-            name="username"
+            name="Username"
             className="form-control"
-            value={this.state.username}
-            onChange={(e)=>this.setState({username: e.target.value})}/>
+            value={this.state.Username}
+            onChange={(e)=>this.setState({Username: e.target.value})}/>
           </div>
           <div className="form-group">
             <label>Phone Number: </label>
             <input type="text"
-              name="username"
+              name="Username"
               className="form-control"
               value={this.state.PhoneNumber}
               onChange={(e)=>this.setState({PhoneNumber: e.target.value})}/>
             </div>
           <div className="form-group">
             <label>Password: </label>
-            <input type="password"
-              name="password"
+            <input type="Password"
+              name="Password"
               className="form-control"
-              value={this.state.password}
-              onChange={(e)=>this.setState({password: e.target.value})}/>
+              value={this.state.Password}
+              onChange={(e)=>this.setState({Password: e.target.value})}/>
             </div>
             <div className="form-group">
               <label>Verify Password: </label>
-              <input type="password"
-                name="passwordRepeat"
+              <input type="Password"
+                name="PasswordRepeat"
                 className="form-control"
-                value={this.state.passwordRepeat}
-                onChange={(e)=>this.setState({passwordRepeat: e.target.value})}/>
+                value={this.state.PasswordRepeat}
+                onChange={(e)=>this.setState({PasswordRepeat: e.target.value})}/>
               </div>
               <div className="form-group">
                 <button
@@ -75,6 +84,7 @@ export default class Register extends React.Component {
                     onClick={() => this.props.goToLogin()}> Login </button>
                   </div>
                 </div>
+              </div>
               );
             }
           }
