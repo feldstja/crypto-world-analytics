@@ -3,6 +3,8 @@ import './App.css';
 import axios from 'axios';
 import Register from './Registerscreen';
 import Login from './Loginscreen';
+import { Button, ButtonGroup, DropdownButton, MenuItem, Modal, PageHeader, FormGroup, FormControl } from 'react-bootstrap';
+// import { Modal } from 'react-bootstrap-modal';
 
 export default class Tools extends React.Component {
   constructor(props){
@@ -22,6 +24,9 @@ export default class Tools extends React.Component {
       option: '',
       personalOption: '',
       user: '',
+      show: false,
+      obj: '',
+      risingCoins: [],
     }
   }
 
@@ -47,11 +52,30 @@ async componentWillMount(){
   }
 
   currencyRemoved(obj) {
-    alert(`You're no longer tracking ${obj.symbol}.`)
+    var thing = obj
+    alert(`You're no longer tracking ${thing}.`)
     this.props.socket.emit('remove', obj)
   }
 
+  handleShow(obj) {
+    console.log('handleShow obj', obj);
+    this.setState({
+      show: true,
+      obj: obj.symbol
+    })
+  }
+
+  handleHide(obj) {
+    console.log('handleHide obj', obj)
+    this.setState({
+      show: false,
+      obj: ''
+    })
+  }
+
   componentDidMount(){
+    console.log('this.state.obj', this.state.obj)
+
     var self = this;
 
     this.props.socket.on('loginSuccess', function(user){
@@ -64,8 +88,7 @@ async componentWillMount(){
       self.props.goToTools(user._id)
     });
     var user = JSON.parse(localStorage.getItem("user") || 'null')
-    if (user) {
-      console.log('Triggered')
+      if (user) {
       this.props.socket.emit('login', user)
     }
     // this.props.socket.emit('getCoins', this.props.user);
@@ -187,11 +210,32 @@ async componentWillMount(){
       var jonSucks = self.state.personalIndex.slice();
       jonSucks.splice(data, 1)
       self.setState({
-        personalIndex: jonSucks
+        personalIndex: jonSucks,
+        show: false,
+        obj: '',
       })
     })
   }
 
+  coinRaiser(obj){
+    for(var i = 0; i < this.state.risingCoins.length; i++){
+      if(this.state.risingCoins[i].symbol === obj.symbol){
+        return;
+      }
+    }
+      console.log(obj.symbol, "has doubled in volume in the past hour")
+      this.setState({
+        risingCoins: this.state.risingCoins.concat(obj)
+      })
+      var self = this;
+      setTimeout(()=>{self.setState({
+        risingCoins: this.state.risingCoins.slice(1)
+      })}, 3600000)
+      // setTimeout(
+      //   this.setState({
+      //     risingCoins: this.state.risingCoins.slice(1)
+      //   }), 10000)
+    }
 
 
 
@@ -284,15 +328,17 @@ async componentWillMount(){
         {
           (this.props.account && this.props.loggedin) ?
           <div>
-          <div>
-            <button onClick={() => this.props.redirect(0)}>Home</button>
-            <button onClick={() => this.props.redirect(1)}>About Crypto</button>
-            <button onClick={() => this.props.redirect(2)}>How To Start</button>
-            <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
-            <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
-            <button onClick={() => this.props.redirect(5)}>FAQ</button>
-            <button onClick={() => this.props.signout()}>Log Out</button>
+          <div className="allButtons">
+            <button className="homebutton" onClick={() => this.props.redirect(0)}>Home</button>
+            <button className="aboutbutton" onClick={() => this.props.redirect(1)}>About Crypto</button>
+            <button className="startbutton" onClick={() => this.props.redirect(2)}>How To Start</button>
+            <button className="techniquesbutton" onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+            <button className="toolsbutton" style={{backgroundColor: 'black', color: 'white'}} onClick={() => this.props.redirect(4)}>Trading Tools</button>
+            <button className="faqbutton" onClick={() => this.props.redirect(5)}>FAQ</button>
+            <button className="faqbutton" onClick={() => this.props.signout()}>Log Out</button>
           </div>
+          <h1>Welcome, {this.state.user.Username}</h1>
+          <br />
           <div className="currencydisplay">
             <div className="container">
               <p> {array.length} total currencies. </p>
@@ -321,6 +367,7 @@ async componentWillMount(){
               {array.map((obj, i)=>
                 <div className="thing" key={obj.symbol}>
                   <div className='info'>
+                    {((((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100) > 100) ? this.coinRaiser(obj) : null}
                     <div className='symbol'>{obj.symbol}:
                     </div> Current Volume: {obj.currVolume}
                   </div>
@@ -361,22 +408,44 @@ async componentWillMount(){
                   </div>
                   <div className='otherThing'> Change in volume in past 24 hours: %{(((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100).toFixed(3)}
                 </div>
-                <button onClick={()=>this.currencyRemoved(obj)}>Remove</button>
+                <button onClick={() => this.handleShow(obj)}>View</button>
               </div> )}
+              <div className="static-modal">
+                <Modal show={this.state.show} obj={this.state.obj} onHide={() => this.handleHide(obj)}>
+                  <Modal.Header>
+                     <Modal.Title> You are viewing {this.state.obj} </Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body>
+                    <form>
+                      <FormGroup controlId="formBasicText">
+
+                          </FormGroup>
+                          <Button onClick={()=>this.setState({show: false, obj: ''})}>Close</Button>
+                          <Button onClick={()=>this.currencyRemoved(this.state.obj)}>Remove</Button>
+                          {/* <Button onClick={makeitdosometwilioshit} >Notify</Button> */}
+                        </form>
+                      </Modal.Body>
+                </Modal>
+              </div>
             </div>
           </div>
           </div>
           : (this.props.account) ? <Login socket={this.props.socket}
             goToTools={this.props.goToTools}
             goToRegister={this.props.goToRegister}
+            redirect={this.props.redirect}
             account={this.props.account}
             loggedin={this.props.loggedin}
             changeUser={this.props.changeUser}
-          /> : <Register goToLogin={this.props.goToLogin} socket={this.props.socket}/>
+          /> : <Register
+            redirect={this.props.redirect}
+            goToLogin={this.props.goToLogin}
+            socket={this.props.socket}/>
         }
       </div>
     );
   }
 }
+
 
 // export default Tools;

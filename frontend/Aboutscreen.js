@@ -1,20 +1,110 @@
 import React from 'react';
+import { Button, Modal, FormGroup, } from 'react-bootstrap';
 
 export default class AboutCrypto extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-        <button onClick={() => this.props.redirect(0)}>Home</button>
-        <button onClick={() => this.props.redirect(1)}>About Crypto</button>
-        <button onClick={() => this.props.redirect(2)}>How To Start</button>
-        <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
-        <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
-        <button onClick={() => this.props.redirect(5)}>FAQ</button>
-      </div>
-      <h1>Young kings in the building</h1>
-    </div>
+      <div className="page">
+          <div className="allButtons">
+          <button className="homebutton" onClick={() => this.props.redirect(0)}>Home</button>
+          <button className="aboutbutton" style={{backgroundColor: 'black', color: 'white'}} onClick={() => this.props.redirect(1)}>About Crypto</button>
+          <button className="startbutton" onClick={() => this.props.redirect(2)}>How To Start</button>
+          <button className="techniquesbutton" onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+          <button className="toolsbutton" onClick={() => this.props.redirect(4)}>Trading Tools</button>
+          <button className="faqbutton" onClick={() => this.props.redirect(5)}>FAQ</button>
+         </div>
+         <h1>How Did It Start?</h1>
+         <p>   The origin of cryptocurrency begins in October 2008, when Satoshi Nakamoto created a whitepaper called "Bitcoin – A Peer to Peer Electronic Cash System," and published it to a cryptography mailing list discussion online. The goal behind the whitepaper was nothing more than to create an electronic peer to peer cash system that is truly decentralized. It is still unclear to this day whether Satoshi Nakamoto is an individual or a group of people, but the identity of Satoshi Nakamoto is irrelevant to the supporters of cryptocurrency because of the power behind the concept.
+         <br></br>
+         <br></br>
+         In January of the following year, Satoshi released the first software which launched the first units of cryptocurrency, also known as "bitcoins." The first block of bitcoin (block number 0) was officially timestamped on January 3rd, 2009 and the bitcoin blockchain officially came into existence.
+         <img src='https://lh3.googleusercontent.com/15Kf6quDytFjRYSgdSejqPtf4yArxwSx3X1nB6O8EOavtcL35Kj4WA9lqGOZaQr-je7lAVfBMQdTFD_JHqEL2Icu-jSimtuurvVVrsl7mhY0MEA5OBi0gKamkQ3KhWveJeSa3kZ-Ag=w2400' align="right" width="200" height="200"/> </p>
+         <br></br>
+         <h1>What Is It?</h1>
+         <p>Cryptocurrency is a medium of exchange, created and stored electronically in the blockchain, using encryption techniques to control the creation of monetary units and to verify the transfer of funds. Bitcoin is the best known example.</p>
+         <p>If you take away all the noise around cryptocurrencies and reduce it to a simple definition, you find it to be just limited entries in a database no one can change without fulfilling specific conditions. This may seem ordinary, but, believe it or not: this is exactly how you can define a currency.</p>
+         <p>Take the money on your bank account: What is it more than entries in a database that can only be changed under specific conditions? You can even take physical coins and notes: What are they else than limited entries in a public physical database that can only be changed if you match the condition than you physically own the coins and notes? Money is all about a verified entry in some kind of database of accounts, balances, and transactions.</p>
+         <p>Some people ask how could Bitcoin possibly have any value? It is for the same reason that a dollar bill, a simple piece of paper, has value. The people give it value.</p>
+         <br></br>
+         <h1>Why Is It Important</h1>
+         <h3>8 Major Reasons</h3>
+         <p>1. Cryptocurrency is one of the safest and trusted kinds of digital currency that people prefer nowadays. In a world where there is an abundance of conmen and looters, we all need to trade in the safest possible ways. Cryptocurrencies give us that assurance which makes them an important source of investment right now and in the future as well.</p>
+         <p>2. Another reason why cryptocurrencies have become extremely in demand is because of their policies. You don't really need to deal with a third party when it comes to cryptocurrency. This gives people a reassurance and a feeling of safety. The fact that cryptocurrencies are digital currencies alleviates the need for a third party that demands a fee. You can transact no matter where you are situated at.</p>
+         <p>3. Cryptocurrency is a low-cost means of transaction. You don't need to shell out money in order to exchange digital currencies. All you need in order to be able to transact is your cell phone and a basic knowledge of cryptocurrencies.</p>
+         <p>4. Most of the digital currencies have to pay for transactions. In the case of cryptocurrencies, you don't really need to pay for the transactions. The reason is that the people who mine the cryptocurrencies; called as miners get their compensation from the network itself.</p>
+         <p>5. You can store your cryptocurrencies in a safe wallet. Cryptocurrencies give you the option of storing your money in two kinds of wallets which can easily be transferred to your account. And the wallets don't have any charges in order to be able to store your digital currencies.</p>
+         <p>6. For most people, privacy is the top-most priority. When dealing in cryptocurrencies, you can expect your transactions to be highly confidential. You can carry out your transactions and be anonymous.</p>
+         <p>7. The amount of money that you want to invest is totally up to you. Cryptocurrencies give you the liberty of buying them in fractions as well. If you feel like a whole bitcoin is too much, you can split it and buy half or one-hundredth of it. This reduces the cost for you and does not require you to spend out of bounds. Using a crypto converter, you can find out the price of any cryptocurrency in your country's currency and invest accordingly.</p>
+         <p>8. Since the senders and recipients of cryptocurrencies don't directly transfer any money to the credit cards, you don't have to share your credentials with anyone. This helps you in avoiding identity theft. You decide what information you want to share with the merchant if anything at all makes you doubtful.</p>
+         <br></br>
+         <h1>Crypto Terminology</h1>
+         <p>Address: an identifier of 26-35 alphanumeric characters, beginning with the number 1 or 3, that represents a possible destination for a crypto payment. Addresses can be generated at no cost by any user of Bitcoin. For example, using Bitcoin Core, one can click "New Address" and be assigned an address. It is also possible to get a Bitcoin address using an account at an exchange or online wallet service.</p>
+         <img src='https://lh3.googleusercontent.com/qvoxjvk0whe8Id_44a-RAlxIHqupAfVrOpPtPvSlu_HrEBZB656zNoQ4smlg9nGi3--GOHsy4yuyqRwqcJmej6V1_bIFOlz3lSpzX8oaevlIcbqxpgJIUwEj893FqZ8jJTbK5WaW3g=w2400' />
+         <p>Airdrop: The process of distributing tokens after the network of a new coin goes live. Often tokens are sold at a huge discount during this process.</p>
+         <p>Altcoin (alt): Any cryptocurrency coin/token that is not Bitcoin.</p>
+         <p>ATH (All Time High): The highest price a given cryptocurrency has seen since it was created.</p>
+         <p>Bag: A portfolio of coins.</p>
+         <p>Bagholder: Someone still holding an altcoin after a pump and dump crash. Can also just refer to someone holding a coin that is sinking in value with few future prospects.</p>
+         <p>Bearish: A term used to describe when the price trend of the market or a coin is stagnant or downward.</p>
+         <p>Block: Blocks are files where data pertaining to a cryptocurrency network is permanently recorded. A block records some or all of the most recent transactions that have not yet entered any prior blocks. Thus a block is like a page of a ledger or record book. Each time a block is 'completed', it gives way to the next block in the blockchain. A block is thus a permanent store of records which, once written, cannot be altered or removed. </p>
+         <p>Block Height: Blocks are added to the blockchain sequentially. The current block number is called the block height.</p>
+         <p>Block Size: Block size describes the amount of data that can be added to a given block on the blockchain. Bigger blocks allow for more transactions to be stored in blocks, but as a trade-off, more hash power is required to mine a block. This makes transactions faster, but one can argue centralizes mining. In crypto, almost everything is "a trade-off," just like IRL (In Real Life).</p>
+         <p>Blockchain: A blockchain is a digitized, decentralized, public ledger of all cryptocurrency transactions. Constantly growing as 'completed' blocks (the most recent transactions) are recorded and added to it in chronological order, it allows market participants to keep track of digital currency transactions without central recordkeeping. Each node (a computer connected to the network) gets a copy of the blockchain, which is downloaded automatically.</p>
+         <p>Bots: Almost all exchanges let users program or use a pre-programmed software that can interact with crypto platforms via an API. One type of software, a type that can execute trades on exchanges, is called a "trading bot" (often referred to as simply a "bot"). It may seem like cheating, and in certain hands, it can sure feel like it, but bots are important in many ways too. They can help implement strategies like trailing stop losses for you, and they can help "make markets" (all those little buys and sells that prevent wide spreads in a given market are generally "market maker" / "accumulation" bots). Like people, bots aren't good or bad, they are neutral and depend on the ethics of the user.</p>
+         <p>Bullish: A term used to describe when the price trend of the market or a coin is upward.</p>
+         <p>Candle Stick: A candlestick is a type of price chart that displays the high, low, open and closing prices of a security for a specific period.</p>
+         <img src='https://lh3.googleusercontent.com/02KKizBtqHEnOAnHtypUbL5oRAUPR10R6O0FTynOmQrvusAUqkLEsEJa27Du68l_Fp3mQ7pzguCFQwafHR7vwzDHyJiXJiGA8OnmE3SYXbIJ6KDredU4sIqKzIgnjMVCBu-xxVlBWg=w2400' />
+         <p>Cold Storage: The process of moving crypto-currency 'offline', as a way of safekeeping your crypto-currency from hacking. There are a variety of ways to do this, but some methods most commonly used:</p>
+         <p>—Printing out the QR code of a software wallet and storing it somewhere safe, such as a safety deposit box.</p>
+         <p>—Moving the files of a software wallet onto a USB drive and storing it somewhere safe.</p>
+         <p>—Using a hardware wallet.</p>
+         <p>Correction: After hitting an all-time high, a coin will enter a period of correction where it steadies out at a given price before rising again (ideally, sometimes a correction simply spurs on a "bear market"). In cryptocurrency coins often hit all-time highs and then enter correction periods.</p>
+         <p>Cryptography: The art/science of encoding and decoding. It is at the core of cryptocurrency to an even greater extent than the concept of currency is.</p>
+         <p>DApp: A decentralized application, often stored on a blockchain. It's not hosted on a private server; it is hosted on many distributed servers. </p>
+         <p>Day Trade: Day trading is very short-term trading, and it can mean holding an asset for just a few seconds, to a couple of hours. The idea is that you sell your asset before the end of the day, hoping to make a small, but quick profit.</p>
+         <p>Dip:</p>
+         <img src='https://lh3.googleusercontent.com/ArPU82Lh5ldq4o45MsUgvcZYH_qCR-A3-Fx8ahf-9R-mPKHrCJdkl2NLSiOj6bx_3uWfCSwZoQDyoBnkmd2PZUniUfDIMO8ewoZrhJYbSKrwVn19pxiV4ar6cGTm1EzUG_Ilf3g_qA=w2400' />
+         <p>Exchanges: Websites where you can buy and sell cryptocurrencies. The most popular is Coinbase.</p>
+         <p>FIAT: Government-issued currency, such as the US dollar.</p>
+         <p>FOMO: The Fear Of Missing Out. The emotional response that makes people impulse buy tokens at their all-time high because they believe it will keep going higher. Try to not react to FOMO.</p>
+         <p>Fork: Like a "save as" for software. When an update is made to the software, a new version and old version are created. Soft forks are meant to be updates to the existing software (generally a blockchain or software that interacts with the blockchain in cryptocurrency). Hard forks are meant to create two identical versions of the software which can both change after the hard fork occurs. Anyone who owns tokens on one blockchain owns tokens on the new one in most cases when a fork occurs. </p>
+         <p>FUD: Fear, Uncertainty, and Doubt. The emotion that people try to invoke in others when they want to bring the price of a coin down or drum up headlines. It can be smart to react to FUD sometimes, as one cannot stop widespread FUD from spurring on a correction, especially after a coin just hit an All Time High.</p>
+         <p>Hash: A hash algorithm turns a large amount of data into a fixed-length hash (a string of characters that acts as a cryptographic key). The same hash will always result from the same data, but modifying the data in any way will completely change the hash. In cryptography most data is encrypted using hash algorithms, they are at the core of cryptocurrency tokens and blockchains. Bitcoin specifically uses SHA-256, SHA stands for Secure Hash Algorithm 256 Bit.</p>
+         <p>Hashrate: The rate at which a given piece of hardware can mine a coin (mining is the cracking of cryptographic codes). It is like horsepower but refers to how fast hardware can decrypt hashes.</p>
+         <p>Hold (or HODL): A misspelling of "hold" that now means Hold On for Dear Life. This is what you have to do when coins enter their common 20% – 80% corrections if you want to come out the other end still owning coins.</p>
+         <p>ICO: An initial coin offering, somewhat similar to an IPO in the non-crypto world. A process that involves creating a new token and raising money for it. The process is often done using smart contracts on the Ethereum network. After a new token is created, it then has to be distributed. Sometimes to give a token value, to distribute it, and simply to help the devs raise money an initial coin offering is used.</p>
+         <p>Keys: The public and private keys are simply large numbers that have been paired together but are not identical (asymmetric). One key in the pair can be shared with everyone; it is called the public key The other key in the pair is kept secret; it is called the private key. Your private key lets you access the crypto associated with a public address. A public address is the public account number people can send coins to; it a has a public key, which is a hash of a private key. Never share your private keys, as they are the root of all the information needed to access one's crypto! </p>
+         <p>Lambo: A status symbol goal post or meme. It is a reference to a Lamborghini. It is an assumption that everyone who owns any amount of any tokens will somehow be driving a Lamborghini within the next 6 months. The term is used to promote coins that people believe will bring them lots of profit.</p>
+         <p>Ledger: A ledger is a database where every transaction of a cryptocurrency is recorded.</p>
+         <p>Market Cap: The total value held in a cryptocurrency. It is calculated by multiplying the total supply of coins by the current price of an individual unit.</p>
+         <p>Mining: The process of trying to 'solve' the next block. It requires obscene amounts of computer processing power to do effectively, but is rewarded with ether. Mining is how transactions get added to the ledger.</p>
+         <p>Mooning: Mooning is when a coin goes on a "run." That is when the price goes up quick. The opposite is a crash, correction, or dip. Can't get a Lambo without mooning, can't see the moon if you don't HODL. </p>
+         <p>Node: Any computer that hosts the blockchain. The blockchain isn't stored in one place; it is distributed, each node running it plays an important role in verifying the ledger.</p>
+         <p>Proof-of-Work (PoW): It is where mining is done by those who have the hash power, time, and energy. The result is that time and energy is traded for rewards.</p>
+         <p>Pump-and-Dump (PND): People get together on telegram groups and then pump coins to the moon. Sometimes what looks like natural growth in crypto is a "PND." If you don't have a why, don't buy. Try not to get FOMO and buy into the giant green candles.</p>
+         <p>P2P: Peer to peer</p>
+         <p>ROI: A return on investment. What you would ideally like to happen.</p>
+         <p>Satoshis (Sats): The smallest fraction of a Bitcoin is called a Satoshi (in other words, a satoshi represents one hundred millionths of a bitcoin). Its named after Satoshi Nakamoto. Bitcoin is in many ways the center of the crypto economy. Thus, traders often speak of Sats.</p>
+         <img src='https://lh3.googleusercontent.com/ETX7Qevj4UD1EvrwIa28BVa7-_DsKlrQ98nVUBLC-ph3JLmD0g8ewse-BzEMBmhY_9S2ybKUlIHKsf9wrDbj8PSyI9UeAyX3fVG8ROkEiRtwtIJYEs1W6-2emefUsJnzvKt1cGL6Mw=w2400' />
+         <p>Shilling: Someone essentially advertising another cryptocurrency. If a coin is promised to cure cancer or be the second coming of Jesus, it's being shilled.</p>
+         <p>Shitcoin: A coin with no potential value or use</p>
+         <p>Short: A trade that profits if the price decreases.</p>
+         <p>Smart Contract: Smart contracts help you exchange money, property, shares, or anything of value in a transparent, conflict-free way while avoiding the services of a middleman. The best way to describe smart contracts is to compare the technology to a vending machine. Ordinarily, you would go to a lawyer or a notary, pay them, and wait while you get the document. With smart contracts, you simply drop a bitcoin into the vending machine (i.e. ledger), and your escrow, driver's license, or whatever drops into your account. More so, smart contracts not only define the rules and penalties around an agreement in the same way that a traditional contract does, but also automatically enforce those obligations.</p>
+         <p>Supply: Total supply is the amount of coin that is already in existence. However, not all of the coins may be circulating at the present time. Some coins are not in circulation because they need to be mined. Generally total supply is equal to or greater than the circulating supply.</p>
+         <p>-Circulating Supply: Circulating supply is the amount of coin available at the present time and circulating in the market.</p>
+         <p>Swing Trade: Swing trading is like trading a very large range. Here you will open a position (sometimes gradually) at what you calculate to be the local bottom, then you will aim to HODL your position all the way to what you believe to be the local top (generally gradually scaling out of your position to lock in profits). Obviously, it is the reverse logic for shorting, you aim to short the top of the forming trend to the bottom.</p>
+         <p>Swing trading is generally done over the course of days or weeks. That means you'll be taking a position, sleeping on it, watching it go up and down in waves, etc.</p>
+         <p>Technical Analysis: Technical Analysis is the art/science of trying to predict future trends from historic price and volume data. You don't need TA as a casual investor, but you should learn the basics if you trade. See tradingview.com. That said, even though crypto can be speculative and see a lot of emotional trading, and thus TA tends to help, it is vital to do some Fundamental Analysis (FA) and other analysis types as well. A chart can only tell you so much; you also need to understand factors like demand, supply, tech, upcoming upgrades, the news, etc. Don't make the mistake of thinking a coin "has to" go to X support level just "because TA," sometimes good news, bad news, or a software update can be the main driver of a coins price (and that won't always be clear from a chart).</p>
+         <p>Ticker: Every coin has a trading symbol or ticker symbol. For Ripple, it is XRP, for Bitcoin BTC, for Litecoin LTC, for Ether (ETH), etc. People often refer to coins by their ticker symbol and not their name.</p>
+         <p>Transaction Fee: To send a transaction a fee must be paid (with most cryptos). This fee is a reward for miners. In Ethereum it is called "Gas," it might have a unique name for a given cryptocurrency.</p>
+         <p>TX: A transaction number. This allows you to track a transaction. If you are freaking out because your transaction is taking too long, you probably just have to wait longer. Try tracking the TX.</p>
+         <p>Volume: Volume is how much of the coin you're looking at is being traded in the time frame that you select. Most exchanges will show you the volume of the last 24 hours. This is important to know in order to know if you can buy and sell that market easily.</p>
+         <p>Wallet: Software that allows you to create cryptocurrency transactions and see balances associated with cryptocurrency addresses. Or more specifically, in wallets where you control your private keys, software that lets you access balances associated with your private and public keys and create a transaction using your private keys (see "keys" below for an explanation).</p>
+         <p>-Software Wallet: Storage for crypto-currency that exists purely as software files on a computer. Software wallets can be generated for free from a variety of sources. MyEtherWallet (MEW) is one of the popular. (more on MEW below)</p>
+         <p>-Hardware Wallet: A device that can securely store crypto-currency. Hardware wallets are often regarded as the most secure way to hold crypto-currency.</p>
+         <p>Whale: Whales are cryptocurrency investors with many coins or dollars. These investors can help move markets, or they can help stop markets from moving. When you see a 250 BTC buy wall or sell wall, that is a Whale. When the price goes down quickly and it makes you sad, or it shoots up and liquidates your short position, you can curse your semi-mythic nemeses "whales."</p>
+        </div>
           );
         }
       }

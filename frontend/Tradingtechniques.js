@@ -4,17 +4,136 @@ export default class Tradingtechniques extends React.Component {
 
   render() {
     return (
-        <div>
-          <div>
-          <button onClick={() => this.props.redirect(0)}>Home</button>
-          <button onClick={() => this.props.redirect(1)}>About Crypto</button>
-          <button onClick={() => this.props.redirect(2)}>How To Start</button>
-          <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
-          <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
-          <button onClick={() => this.props.redirect(5)}>FAQ</button>
-        </div>
-        <h1> I bet your ass really wanted some techniques lmao </h1>
+      <div className="page">
+        <div className="allButtons">
+          <button className="homebutton" onClick={() => this.props.redirect(0)}>Home</button>
+          <button className="aboutbutton" onClick={() => this.props.redirect(1)}>About Crypto</button>
+          <button className="startbutton" onClick={() => this.props.redirect(2)}>How To Start</button>
+          <button className="techniquesbutton" style={{backgroundColor: 'black', color: 'white'}} onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+          <button className="toolsbutton" onClick={() => this.props.redirect(4)}>Trading Tools</button>
+          <button className="faqbutton" onClick={() => this.props.redirect(5)}>FAQ</button>
       </div>
+      <h1>CoinMarketCap</h1>
+      <p>One of the most widely used tools used in the crypto world is coinmarketcap.com. This website provides valuable information on almost all cryptocurrencies. The data given for each listed coin includes: market capitalization, current price, volume, supply, 24-hour percentage change, growth charts, the listed exchanges, relevant social media, and historical data.</p>
+      <img className="coinmarketcap" src='https://lh3.googleusercontent.com/Dc1njhqZYATlh9PyBwyLmAWiNj09Yzip3RNhKg-1Sep4LukmKZk_HqndyA_6AZxxKlUEPemT7lngrCQUAaX2an4uiHnXDMs4ggcdLmCYFdoGvAwepyN3R7JSjVisbevmJowv26NWmA=w2400' />
+      <br></br>
+      <h3>How to Read This Website</h3>
+      <p>Ranking: The default ranking is based on Market Cap, but if you were to click "Price" it would rank the coins based on their price. The same applies to other categories as well. In general, the higher the ranking the less at risk your investment is and vice versa. You can think of the top ranking coins as the Fortune 500.</p>
+      <p>Market Cap:  Market Cap is the amount of fiat money currently invested into a cryptocurrency. It is calculated by multiplying the total supply of coins by the current price of an individual unit.
+For example, 1,000,000 coins at $1.00 = $1,000,000 Market Cap. Now if you are looking at this coin for a potential investment you need to keep in mind that in order for the price to raise to $1.50, another $500,000 would have to flow into coins market ( $1.50 x 1,000,000 coins = $1,500,000 ). This influx of money would occur due to positive news, a new listing on a popular exchange, great reviews from critics, etc... The market cap essentially represents the amount of demand for the crypto or underlying. More people buying, bidding the price higher, leads to a higher market cap. </p>
+      <p>Price: The price is what the cryptocurrency is valued at in USD. Be cautious when looking at prices. Low prices may seem appealing to investors, but low prices does not mean the price will skyrocket. There is not a difference between a coin valued at $0.01 with a supply of 100,000,000,000 and another coin that is valued at $10,000 with a supply of 100,000. Moreover, there are coins that may have a low supply and price, but this is likely due to their project's worth. You would not want to invest in this coin that creates a global marketplace for cool rocks.</p>
+      <p>Volume:  Volume means how much of that cryptocurrency got traded in the past 24 hours.  Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down. From volume, you can infer the direction and movements of a coin. It's an essential metric for traders. Volume can examined in minute detail. You can track volume on CoinMarketCap by the last 24 hours, last week, or last 30 days. This helps reveal if a coin's recent swings are an aberration or the norm. A coin with frequent heavy movements won't attract attention if it has high volume. If a coin normally has less volume, heavy trading in the last 24 hours could indicate there's some support behind the move it may be making. </p>
+      <p>
+Circulating Supply: The amount of a cryptocurrency can be defined in circulating supply, total supply, and maximum supply. We'll use Bitcoin, the most prominent cryptocurrency, as an example. There are around 16.6 million Bitcoin in circulation. Circulating supply is the amount of a currency out in the real world; being used day-to-day and trading through exchanges. Other coins have a much greater circulating supply. Other coins have up to  1 trillion tokens floating around. Total supply is circulating supply plus additional coins mined, but not on the market. Straight from CoinMarketCap: "Coins that are locked, reserved, or not able to be sold on the public market are coins that can't affect the price and thus should not be allowed to affect the market capitalization as well." If a team had mined coins and then held them, they exist, but aren't circulating. Thus, total supply. Teams might hold coins for a wide variety of reasons. Lastly, max supply is the maximum amount of a coin that will ever be produced. There will be 21 million Bitcoins. Period. That's all. That sounds like a lot, but compared to some currencies we'll discuss later, it's small fry. The coins get more and more difficult to mine over time automatically, to slow the production rate of the currency. Circulating supply is possibly the crypto metric hardest to compare. A given circulating supply is influenced by the team, their long-term plan, whether they hold tokens, if there's a set amount to be mined, and so on. However, it gives prospective investors a snapshot of where a coin is in its mining lifecycle. A circulating supply can be a guide to if a coin will continue to appreciate, or if inflation may ruin it. The differences from token to token are just another reminder to do your own research.</p>
+      <p>Change: The change is how much the price of the cryptocurrency has changed in terms of percentage in the past 24 hours. There is also an option to view percent change in the past hour and past week. These can demonstrate short-term fluctuations in the coin's value.</p>
+      <p>Price Graph: This small price graph gives a quick visual of how the coin's value has fluctuated over the past 7 days.</p>
+      <br></br>
+      <h3>Clicking On A Cryptocurrency</h3>
+      <img className="moneropage" src='https://lh3.googleusercontent.com/qbO-uESooQYiOxDfU6e9EyfM5wquIOaqktsks0UUYqAwc5iEntyI_41LBEfCC5r7tr57tIxh9667yAUI_pyWdjUsOK0eOsFX6a6-eyCGuMFar6yN8ZZBLK6t05G_UBxMdGI6O6bB4Q=w2400' />
+      <p>Website - This link will send you directly to the website of the cryptocurrency where you can see more about the purpose, the team, the roadmap, and more.</p>
+      <p>Chat - This will send you directly to the main chat group of the cryptocurrency where you can see news about the coin, talk to the community that supports the coin, discuss flaws and potential ways to improve, or even just to talk.</p>
+      <p>Source Code - This will link you directly to the source code of the project (commonly on GitHub) where you can see how much work is being done, how recent developers have been working on it, and see the organization and cleanliness of the code itself.</p>
+      <br></br>
+      <h3>Charts</h3>
+      <img className="chartspage" src='https://lh3.googleusercontent.com/JzjvKjJpzYMMA_2JGRKT3j1HmPBgpexO-1uev4PoF-KI5Wy8V6lUegQW0cIdxLFjwZp34qpj1aI_fveR_CUASOUMGTZxJxnnT-wAE02dDnvLHpyFilVum2qctM6Nuq1zIDddWl-SWQ=w2400' />
+      <p>A line chart is one of the most basic charts you will come across and it looks a lot like you may remember from high school math! These charts show the simple progression of a coin over time represented by a line. Many times you will see line charts with multiple different lines tracking different aspects like price and market share. These linear graphs give you a good general idea of what the coin has done in price over time.</p>
+      <p>Here you can see in this line chart that they show you the price of Bitcoin in USD in green, Market Cap in light blue and then the 24hr volume in the grey at the bottom right corner. This is a pretty standard chart you will see. Of course the green line is the most important, as it is the price of Bitcoin, but Market Cap and volume are also very important and you can see how they correlate and follow each other.</p>
+      <p>An important feature of almost any trading chart is the "zoom" feature. In the Bitcoin chart above you see we have the zoom feature at the top left and it is set to "ALL" to show the entire lifetime of tracking. If we check another option like 1y (1 year) or 3m (3 months) we get the same type of graph but just zoomed in to give us more detail. This is super helpful to see different trends for the coin quickly. As you can see the charts for 3m and 1 day look quick different, but they have all the same data.</p>
+      <p>Another useful feature of most charts is the ability to hover over the line chart and get the data for that given period. As you can see in this 1 day chart I hovered over that quick spike in price and it gives me the exact data for that peak. While this is a good amount of data, most traders rely on a better type of chart called the candlestick chart.</p>
+      <br></br>
+      <h3>Markets</h3>
+      <img className="marketspage" src='https://lh3.googleusercontent.com/Cz87StDuQzpCW-ki_qgdmDWKk7yNJACJtdN2gS7T8e5y5RkgdLleD1i8xfYgZo225-VREBQPSU1rBltYSFo_qnczePvO277uscdW762Hkl7HKzHQe_7Vutrss4cR1lQv2d8ut0IKbg=w2400' />
+      <p>The Markets Tab lists all the exchanges that the cryptocurrency is on. There are two different types of volume columns. The Volume (24h) is referring to the amount of money traded in the past 24 hours on the exhange. The volume percentage is the percentage of volume that the coin has on the exchange compared to the volume of all the other exchanges the coin is listed on. It is important not to invest in coins on exchanges that have very low volumes for that coin. It will be much easier to execute trades on exchanges with higher volumes. </p>
+      <p>This is demonstrated through the differences in price on other exchanges. In the Monero example above, without knowing you would think it may be smart to buy $1000 worth of Monero on the Waves Decentralized Exchange which is selling it for $179.58 and then transfer it to an exchange that has Monero at a higher price in order to sell it and take the profit. However, not only will you have some transaction fees for the transfer, but also you will not be able to buy $1000 worth of Monero on Waves because of its low volume which makes it hard to execute trades. </p>
+      <p>Day Traders will for the most part trade on exchanges with high volumes for this reason. The trades can be made much quicker, which in turn can lead to more trades (and more money).</p>
+      <br></br>
+      <h3>Social</h3>
+      <img className="socialpage" src='https://lh3.googleusercontent.com/VbPiJX_vp4jd8OjVP_yAfZYmHfKoHwe5Edj3k8AmOq5pqZW8X_OGBva7clDP3GZ1NZUaLY-KaafOzR5PLQ4UQhifDfOpQKnT4s-ygb6iBrKQOo0sU7VV1rsyD-1m6-qFiF5Q9bToWg=w2400' />
+      <p>The social media tab displays usually the Twitter feed and Reddit page of the coin. It is important to look for a coin that is active in social media and updates the community often. If the social media is not active at all, that is probably a good indicator that you should avoid the coin. </p>
+      <p>The Reddit page is more for the community to discuss recent events and a place to show support for the coin. It is also a place where people can complain, which happens quite often. When looking at this page, the goal is to determine whether the community behind the coin is strong and people believe in the coin because that is crucial to a coin's success and development. If the page is full of complaints or minimal content, that is not a positive sign.</p>
+      <br></br>
+      <h1>A Project's Homepage</h1>
+      <h3>Why is it important?</h3>
+      <p>You can find the projects website through coinmarketcap.com or simply through searching for it online. First things first, if you are having trouble finding the website, or even worse, if you cannot find the website at all... stay away. </p>
+      <p>Secondly, when you find the website you are going to want to judge the book by its cover. I know this is what we were raised not to do, but when millions of people are investing into plenty of coins a day they do not have time to waste their time with coins who do not have a nicely designed and organized website. Just browse through the website and see for yourself.</p>
+      <p>One of the key parts of a project's success is the team behind it. It takes great leadership, marketing, and developers. Research the team to check their past jobs, accomplishments, and credibility/respect in the crypto community.</p>
+      <p>Next and possibly most importantly, you need to read their whitepaper. It details everything you need to know about the currency before making up your mind if you want to invest, purchase or use it. This includes commercial, technological and financial details of a new coin in language that can be understood by someone who is not an expert in the space. At first, you are going to feel lost and not understand what you are reading, but if you do not understand a term just pause and look it up. The whitepaper will have fancy terminology to impress investors but for the most part it should be made to be readable by anyone. The more whitepapers you read, the easier it will be to determine which are good and which are bad.</p>
+      <p>When evaluating a coin, token, or ICO, it is worth looking into what their roadmap looks like. Roadmaps give you a sense of what the team behind the coin have in mind for the future, as well as telling you how confident they are that they will achieve their goals. However, you shouldn't blindly accept the contents of any roadmap – you need to analyze it critically. Many crypto projects have a tendency to overreach in their roadmaps as a means of convincing their audience that they have serious plans. You need to look for roadmaps that have sensible timeframes, strong and manageable goals, and that have completed their previous goals on time. </p>
+      <br></br>
+      <h1>Technical Analysis</h1>
+      <h3>General Information</h3>
+      <p>Crypto traders have several tools to assess the cryptocurrency market. One of them is an approach known as Technical Analysis. Using this method, traders can get a better understanding of the market sentiment and isolate significant trends in the market. This data can be used to make more educated predictions and wiser trades.</p>
+      <p>Technical analysis considers the history of a coin with price charts and trading volumes, no matter what the coin or project does. As opposed to technical analysis, fundamental analysis is more focused on establishing if a coin is over or under valued.</p>
+      <p>To get a better idea of technical analysis, it is crucial to understand the fundamental ideas of Dow Theory that tech analysis is based on:</p>
+      <p>1. The market considers everything in its pricing. All existing, prior, and upcoming details have already been integrated into current asset prices. With regards to Bitcoin and crypto, this would be comprised of multiple variables like current, past, and future demand, and any regulations that impact the crypto market. The existing price is a response to all the current details, which includes the expectations and knowledge of each coin traded in the market. Technicians interpret what the price is suggesting about market sentiment to make calculated wise predictions about future pricing.</p>
+      <p>2. Prices movement aren't random. Rather, they often follow trends, which may either be long or short-term. After a trend is formed by a coin, it's probably going to follow that trend to oppose it. Technicians try to isolate and profit from trends using technical analysis.</p>
+      <p>3. 'What' is more important than 'Why'. Technicians are more focused on the price of a coin than each variable that produces a movement in its price. Although multiple aspects could have influenced the price of a coin to move in a specific direction, Technicians assertively review supply and demand.</p>
+      <p>4. History tends to get repeated. It is possible to predict market psychology. Traders sometimes react the same way when presented with similar stimuli.</p>
+      <br></br>
+      <h3>Trend Lines</h3>
+      <img className="trendlines" src='https://lh3.googleusercontent.com/_3ZQ0GrCq-4RHGkhO0Gy2K7buHXK_ycVMSIWX69sPN3FL__SGrjJ_k4W7V1tL3LsRYwzhHJg1Let2_bRZNGxygToSOs_g8woVCVUNwzY6iE6AowthfbT-alCKv6ETik2UIyGc9D-9w=w2400' />
+      <p>Trend lines, or the typical direction that a coin is moving towards, can be most beneficial for traders of crypto. That said, isolating these trends can be easier said than done. Crypto assets might be substantially volatile, and watching a Bitcoin or crypto price movement chart will probably reveal a selection of highs and lows that form a linear pattern. With that in mind, Technicians understand that they can overlook the volatility and find an upward trend upon seeing a series of higher highs, and vice versa – they can identify a downtrend when they see a series of lower lows.</p>
+      <p>Additionally, there are trends that move sideways, and in these cases, a coin doesn't move significantly in either direction. Traders should be mindful that trends come in many forms, including intermediate, long and short term trend lines.</p>
+      <p><b>Important tip:</b> you must be accurate when drawing these trend lines! How to do it perfectly? As you hover each candle you will notice the lowest price of it marked as "L" in the top bar (or the highest price, "H", if line's direction is down). Now place your line exactly there. Next, extend the line roughly, as it touches the next candle in the trend line, do the same – check exactly the "L" for that candle. Now correct your line. Final step is to auto-extend the line using line's Settings – Line extend to the desired side (probably right). </p>
+      <br></br>
+      <h3>Resistance and Support Levels</h3>
+      <img className="resistance" src='https://lh3.googleusercontent.com/hZyN9fE738iwCDN9sVyvqPboMu3gzCJUvlUcbIJh_VHjqrSibTHs0Z7Lt-UXikjHvszHkfZETiSTrpfAfO4EpPg_vPuGkoBhDUqKW7MW8Nb9Em6ob-i7cGRMJZuimynFK-9YZS9naw=w2400' />
+      <p>As there are trend lines, there are also horizontal lines that express levels of support and resistance. By identifying the values of these levels, we can draw conclusions about the current supply and demand of the coin. At a support level, there seems to be a considerable amount of traders who are willing to buy the coin (a large demand), i.e., those traders believe that the currency is priced low at this level and therefore will seek to buy it at that price. Once the coin reaches close to that level, a "floor" of buyers is created. The large demand usually stops the decline and sometimes even changes the momentum to an upward trend. A level of resistance is exactly the opposite – an area where many sellers wait patiently with their orders, forming a large supply zone. Every time the coin approaches that "ceiling", it encounters the supply stacks and goes back.</p>
+      <p>There is often a situation in which trade-offs can be between support and resistance levels: gathering close to support lines and selling around the resistance level. This opportunity usually takes place when lateral movement is identified.</p>
+      <p>So what happens during breakout of resistance or support level? There is high probability that this is an indicator which is strengthening the existing trend. Further reinforcement of the trend is obtained when the resistance level becomes support level, and being tested from above shortly after the breakout.</p>
+      <p>Note: False breakouts occur when a breakout happens, but the trend doesn't change. Hence, we must use some more indicators, such as trading volume, to identify the trend.</p>
+      <br></br>
+      <h3>Moving Averages</h3>
+      <img className="averages" src='https://lh3.googleusercontent.com/DDmWx7EhlGP2r68FY5GkZqV6KXuP2il53qElDjETE3abqjIfr1cOpqPc5T-hjcbWBFO-VTIEY7rV5WAzozbCWHPZT46_1lBCLU52WF_3wNMVw9XTk8cn_bk7EPu2K1Ub03CR9nhj9A=w2400' />
+      <p>Another technical analysis tool for crypto currencies and technical analysis in general, in order to simplify trend recognition, is called moving averages. A moving average is based on the average price of the coin over a certain period of time. For example, a moving average of a given day will be calculated according to the price of the coin for each of the 20 trading days prior to that day. Connecting all moving averages forms a line.</p>
+      <p>It is also important to recognize the exponential moving average (EMA), a moving average that gives more weight in its calculation to the price values of the last few days than the previous days. An example is the calculation coefficient of the last five trading days of EMA 15 days will be twice that of the previous ten days.</p>
+      <p>In the following graph we can see a practical example: If a 10-day moving average crosses above a 30-day moving average it might tell us a positive trend is coming.</p>
+      <br></br>
+      <h3>Trading Volume</h3>
+      <img className="volume" src='https://lh3.googleusercontent.com/HvNBq3p0btLDYW6GykDzknHxZGb9B31l-_b8kczf6kVXeQzrhBFp32cBTqG5bZtzl1BX4xfIJH7FJjan6Zhyk2-Kl53ws2nanTP8X3R8S8cxRSy4oxh4BriLo-5jowUbRTDHuB4DxQ=w2400' />
+      <p>Trading volume plays an important role in identifying trends. Significant trends are accompanied by a high trading volume, while weak trends are accompanied by a low trading volume. When a coin goes down it is advisable to check the volume which accompanied the decline. A long-term trend of healthy growth is accompanied by a high volume of increases and a low volume of declines. It is also important to see that volume is rising over time. If the volume is decreasing during increases, the upward trend is likely to come to an end, and vice versa during a down trend.</p>
+      <br></br>
+      <h3>Caution</h3>
+      <p>Using technical analysis, traders can identify trends and market sentiment and they also have the ability to make wiser investment decisions. However, there are a number of key points to consider:</p>
+      <p>Technical analysis is a practical method that weighs past prices of certain coins and their trading volume. When considering entering a trade, it is not recommended that you only rely on technical analysis. Especially in the field of crypto, a field that often generates news, there are fundamental factors that have a significant impact on the market (such as regulations, ETF certificates, mining hash, etc.). Technical analysis only ignores and can't predict these factors, so the recommendation is to mix together the technical analysis and the fundamentals analysis to make wise investment decisions.</p>
+      <p>An analyst who makes a decision to buy a particular coin due to fundamental reasons can get technical support or find a good technical entry point and thus strengthen the trade's ROI (return on investment).</p>
+      <br></br>
+      <h1>Other Resources</h1>
+      <h3>Telegram</h3>
+      <p>Telegram has become popular in the world of blockchain and cryptocurrency for its blockchain and cryptocurrency messaging groups. On Telegram, groups can hold up to 100,000 people, and the messaging is fast and secure.</p>
+      <h3>Reddit</h3>
+      <p>People often get their questions answered about the cryptocurrency here. Reddit usually clarifies any type of confusion you may have, and it gives a great sense of what type of community is behind the coin.</p>
+      <h3>Twitter</h3>
+      <p>Look to see if they have a twitter that is active. Constant updates are much appreciated by the community. You can also check the amount of followers they have. Do you see potential?</p>
+      <h3>BitcoinTalk</h3>
+      <p>Bitcointalk originated as a forum for discussing Bitcoin, but since its creation, it's become a hub for the wide variety of altcoins launching ICOs. Although robust discussions on the forum cover every corner of the blockchain world, "Announcements (Altcoins)" is the most popular board, with over six million posts.</p>
+      <h3>Google Trends</h3>
+      <p>Use this free tool that google provides to see how interested people are in the crypto. It shows how often a particular search-term is entered relative to the total search-volume across various regions of the world. Have lots of  people been looking it up recently? Less? </p>
+      <h3>Discord</h3>
+      <p>Discord has increasingly become a go-to communication app for cryptocurrency communities. If you can think of a currency, there's probably a Discord server for talking about it. There's even a website, Discord.me for finding them. These servers are filled with lively (and mostly civil) conversation about all things crypto, including news, speculation, analysis and also regular conservation. </p>
+      <br></br>
+      <h1>Different Types of Trading</h1>
+      <h3>Day Trading</h3>
+      <p>Trading every day is your style if you enjoy trading itself and if you are impatient, so you need to see profits and results on a daily basis and sleep well because you don't keep your trades open overnight.</p>
+      <p>People who make a living from trading, are usually daytraders. Or, the other way around – you can only be a successful daytrader if you have nothing else to distract you. Price movements must be observed constantly, as you should manually move your stop loss order to the next level, to make sure you have locked in the highest profit possible until a trend reversal.</p>
+      <p>Also, daytrading with tiny amounts is the best plan to practice and learn by.</p>
+      <br></br>
+      <h3>Scalping</h3>
+      <p>Scalping is a form of daytrading which is extremely active. The target is to take profits out of the smallest intra-day price movements, but a lot of them. This style only makes sense if trading fees are low or spread is small. The trader has to calculate if he's already in profit when subtracting the fee from the transaction.</p>
+      <p>A scalping trade is mostly finished in seconds to minutes. The trader must have a high overall percentage of trades with profit to be successful, as scalping isn't targeting bigger moves with high profits at once. The difference between the highs of profits and losses is less than in other trading styles, so profits must be clearly in the majority.</p>
+      <p>Scalping on the minute chart with tiny amounts is a good practice to enhance trading skills.</p>
+      <br></br>
+      <h3>Swing Trading</h3>
+      <p>Swing trading means you trade on a higher time frame, which can be from days to weeks. This, of course, only makes sense for bigger positions than for day trades. Also swing trades don't require constant monitoring as price movements on smaller time frames don't play a significant role.</p>
+      <p>Swing traders use stop loss orders as well, but on a higher time frame. They can ignore intra-day moves within a trend of the bigger picture, shown on the daily chart. This style of trading is great for patient traders with a certain amount of capital, who can't trade all the time.</p>
+      <br></br>
+      <h3>Position Trading</h3>
+      <p>Position trading is more comparable to investing than to actively trading. These trades span a period of months to even years. This is also known as "holding." It eliminates the stress associated with the high volatility in the market. Compared to the other trading styles, fundamentals of the asset are as important as technical chart analysis, as the fundamentals help to estimate how the asset may perform long term, or if there are chances that it might die at some point.</p>
+      <br></br>
+      <h1>To Invest Or Not To Invest?</h1>
+      <h3>Gut Feeling</h3>
+      <p>At the end of the day, no one or thing is going to tell you to pull the trigger on an investment. It all comes down to a gut feeling that the project is going to be successful or not. No one truly knows what is going to happen, even if they claim to. It is important to trust your gut, and be confident in the decision you make.</p>
+    </div>
       )
     }
   }

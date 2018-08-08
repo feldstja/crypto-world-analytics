@@ -33,47 +33,51 @@ export default class Register extends React.Component {
   render() {
     return (
       <div>
-      <div>
-        <button onClick={() => this.props.redirect(0)}>Home</button>
-        <button onClick={() => this.props.redirect(1)}>About Crypto</button>
-        <button onClick={() => this.props.redirect(2)}>How To Start</button>
-        <button onClick={() => this.props.redirect(3)}>Trading Techniques</button>
-        <button onClick={() => this.props.redirect(4)}>Trading Tools</button>
-        <button onClick={() => this.props.redirect(5)}>FAQ</button>
+      <div className="allButtons">
+        <button className="homebutton" onClick={() => this.props.redirect(0)}>Home</button>
+        <button className="aboutbutton" onClick={() => this.props.redirect(1)}>About Crypto</button>
+        <button className="startbutton" onClick={() => this.props.redirect(2)}>How To Start</button>
+        <button className="techniquesbutton" onClick={() => this.props.redirect(3)}>Trading Techniques</button>
+        <button className="toolsbutton" style={{backgroundColor: 'black', color: 'white'}} onClick={() => this.props.redirect(4)}>Trading Tools</button>
+        <button className="faqbutton" onClick={() => this.props.redirect(5)}>FAQ</button>
       </div>
-      <div>
-        <h1>Register</h1>
+      <div className="signform">
+        <h1 className="signup">Sign Up For Free</h1>
         <div className="form-group">
-          <label>Username: </label>
           <input type="text"
             name="Username"
             className="form-control"
             value={this.state.Username}
-            onChange={(e)=>this.setState({Username: e.target.value})}/>
+            onChange={(e)=>this.setState({Username: e.target.value})}
+            placeholder="Username"
+          />
           </div>
           <div className="form-group">
-            <label>Phone Number: </label>
             <input type="text"
               name="Username"
               className="form-control"
               value={this.state.PhoneNumber}
-              onChange={(e)=>this.setState({PhoneNumber: e.target.value})}/>
+              onChange={(e)=>this.setState({PhoneNumber: e.target.value})}
+              placeholder="Phone Number"
+            />
             </div>
           <div className="form-group">
-            <label>Password: </label>
             <input type="Password"
               name="Password"
               className="form-control"
               value={this.state.Password}
-              onChange={(e)=>this.setState({Password: e.target.value})}/>
+              onChange={(e)=>this.setState({Password: e.target.value})}
+              placeholder="Password"
+            />
             </div>
             <div className="form-group">
-              <label>Verify Password: </label>
               <input type="Password"
                 name="PasswordRepeat"
                 className="form-control"
                 value={this.state.PasswordRepeat}
-                onChange={(e)=>this.setState({PasswordRepeat: e.target.value})}/>
+                onChange={(e)=>this.setState({PasswordRepeat: e.target.value})}
+                placeholder="Verify Password"
+              />
               </div>
               <div className="form-group">
                 <button

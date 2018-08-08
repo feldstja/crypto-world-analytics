@@ -1,85 +1,306 @@
 .App {
-  text-align: center;
+ text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+ animation: App-logo-spin infinite 20s linear;
+ height: 80px;
 }
 
 .App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+ background-color: #262626;
+ height: 150px;
+ padding: 0px;
+ color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.form-group {
+ align-items: center;
+ margin:5px auto;
+ text-align: center;
 }
 
-.App-intro {
-  font-size: large;
+.signform {
+ background: #343435;
+ max-width:500px;
+ margin:40px auto;
+ padding: 10px;
 }
+
+.page {
+ margin-right: 100px;
+ margin-left: 100px;
+}
+
+.welcome {
+ font-family: 'Oswald', sans-serif;
+ color: black;
+ font-size: 2em;
+ position: relative;
+ margin: 0 auto 1em;
+ padding: 1em 1em .25em 1em;
+ text-align: center;
+ text-transform: uppercase;
+ text-decoration: underline red;
+}
+
+
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+ from { transform: rotate(0deg); }
+ to { transform: rotate(360deg); }
 }
 
 .thing {
-  border: 1px solid black;
-  padding: 2px;
-  margin-right: 20px;
-  margin-left: 20px;
-  background-color: skyblue;
+ border: 1px solid black;
+ padding: 2px;
+ margin-right: 20px;
+ margin-left: 20px;
+ background-color: skyblue;
 }
 
 .thing:hover {
-  background-color: aqua;
+ background-color: aqua;
 }
 
 .otherThing {
-  color: red;
+ color: red;
 }
 
 .symbol {
-  font-weight: bold;
+ font-weight: bold;
 }
 
 .info {
-  display: inline
+ display: inline
 }
 
 .sorting {
-  display: inline-block;
+ display: inline-block;
 }
 
 .container {
-  border: 1px solid gray;
-  padding: 10px;
-  margin: 50px;
-  align-items: center;
-  justify-content: center;
-  overflow-y: scroll;
-  height: 400px;
-  margin-bottom: 40px;
-  width: 500px;
+ border: 1px solid gray;
+ padding: 10px;
+ margin: 50px;
+ align-items: center;
+ justify-content: center;
+ overflow-y: scroll;
+ height: 400px;
+ margin-bottom: 25px;
+ width: 500px;
 }
 
 .currencydisplay {
-  display: flex;
-  flex-wrap: nowrap;
+ display: flex;
+ flex-wrap: nowrap;
+ align-items: center;
+ justify-content: center;
 }
 
 .personalcontainer {
-  border: 1px solid gray;
-  padding: 10px;
-  margin: 50px;
+ border: 1px solid gray;
+ padding: 10px;
+ margin: 50px;
+ align-items: center;
+ justify-content: center;
+ overflow-y: scroll;
+ height: 400px;
+ margin-bottom: 25px;
+ width: 500px;
+}
+
+.signup {
+ align-items: center;
+ text-align: center;
+ color: white;
+
+}
+
+.logo {
+ height: 150px;
+
+}
+
+.homebutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.aboutbutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.startbutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.techniquesbutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.toolsbutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color: black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.faqbutton {
+ display:inline-block;
+ padding:0.35em 1.2em;
+ border:0.1em solid black;
+ margin:0 0.3em 0.3em 0;
+ border-radius:0.12em;
+ box-sizing: border-box;
+ text-decoration:none;
+ font-family:'Roboto',sans-serif;
+ font-weight:600;
+ color:black;
+ text-align:center;
+ transition: all 0.2s;
+}
+
+.homebutton:hover {
+ color: white;
+ background-color: black;
+}
+
+.aboutbutton:hover {
+ color: white;
+ background-color: black;
+}
+
+.startbutton:hover {
+ color: white;
+ background-color: black;
+}
+
+.techniquesbutton:hover {
+ color: white;
+background-color: black;
+}
+
+.toolsbutton:hover {
+ color: white;
+ background-color: black;
+}
+
+.faqbutton:hover {
+ color: white;
+ background-color: black;
+}
+
+.allButtons {
+  display: flex;
   align-items: center;
   justify-content: center;
-  overflow-y: scroll;
-  height: 400px;
-  margin-bottom: 40px;
-  width: 500px;
+  padding: 2px;
+}
+
+.coinmarketcap {
+  align-items: center;
+  justify-content: center;
+  margin-right: 200px;
+  margin-left: 0px;
+  width: 95%;
+}
+
+.moneropage {
+  width:100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.chartspage {
+  width: 95%;
+  align-items: center;
+  justify-content: center;
+}
+
+.marketspage {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.socialpage {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.trendlines {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.averages {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.resistance {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+}
+
+.volume {
+  width: 90%;
+  align-items: center;
+  justify-content: center;
 }
