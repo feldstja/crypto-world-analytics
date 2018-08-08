@@ -101,7 +101,7 @@ async componentWillMount(){
     //   })
     // })
     const intervalID = setInterval(() => {
-      axios("http://localhost:3000/ethtobtc", {
+      axios("/ethtobtc", {
         method: 'GET'
       })
       .then((resp)=>{
@@ -109,7 +109,7 @@ async componentWillMount(){
           ethToBtc: resp.data
         })
       })
-      axios("http://localhost:3000/btctodai", {
+      axios("/btctodai", {
         method: 'GET'
       })
       .then((resp)=>{
@@ -117,7 +117,7 @@ async componentWillMount(){
           daiToBtc: (1 / resp.data)
         })
       })
-      axios("http://localhost:3000/btctoeurs", {
+      axios("/btctoeurs", {
         method: 'GET'
       })
       .then((resp)=>{
@@ -125,7 +125,7 @@ async componentWillMount(){
           eursToBtc: (1 / resp.data)
         })
       })
-      axios("http://localhost:3000/btctousd", {
+      axios("/btctousd", {
         method: 'GET'
       })
       .then((resp)=>{
@@ -147,7 +147,7 @@ async componentWillMount(){
       //   })
       // })
       // .catch((err)=>console.log("ERROR:", err))
-      axios("http://localhost:3000/currency", {
+      axios("/currency", {
         method: 'GET'
       })
       // .then((res)=>res.json())
