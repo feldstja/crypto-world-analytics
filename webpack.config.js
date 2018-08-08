@@ -15,7 +15,7 @@ module.exports = {
         extensions: ['.js', '.scss']
     },
     output: {
-        path: path.join(__dirname, '/public'),
+        path: path.join(__dirname, '/build'),
         publicPath: '/',
         filename: 'bundle.js'
     },

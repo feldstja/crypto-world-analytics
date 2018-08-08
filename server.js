@@ -5,6 +5,7 @@ const app = express();
 const axios = require('axios')
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'build')));
 
 app.use(bodyParser.json())
 
@@ -108,7 +109,6 @@ socket.on('register', (data) => {
   // });
 });
 socket.on('add', (data) => {
-  console.log(socket.user)
    if (socket.user.FocusedCurrencies.indexOf(data) === -1) {
     socket.user.FocusedCurrencies.push(data);
     socket.user.save(function(err, user){
