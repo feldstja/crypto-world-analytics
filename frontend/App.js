@@ -16,7 +16,7 @@ export default class Home extends React.Component {
       screen: 0,
       loggedin: '',
       account: false,
-      socket: io('http://localhost:3000'),
+      socket: io('/'),
       user: {}
     };
   }
