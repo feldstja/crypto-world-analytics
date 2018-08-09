@@ -341,6 +341,7 @@ async componentWillMount(){
           <br />
           <div className="currencydisplay">
             <div className="container">
+              <div>
               <p> {array.length} total currencies. </p>
               <div className='sorting'>
                 <div>Alphabetical
@@ -363,7 +364,9 @@ async componentWillMount(){
         <button onClick={()=>this.setState({option: 'USD'})}>USD</button>
         <button onClick={()=>this.setState({option: ''})}>All</button>
           </div>
+        </div>
               <input type='text' className='filter' onChange={(e)=> this.setState({search: e.target.value})} placeholder='Search' />
+              <div className='theInfo'>
               {array.map((obj, i)=>
                 <div className="thing" key={obj.symbol}>
                   <div className='info'>
@@ -371,10 +374,11 @@ async componentWillMount(){
                     <div className='symbol'>{obj.symbol}:
                     </div> Current Volume: {obj.currVolume}
                   </div>
-                  <div className='otherThing'> Change in volume in past 24 hours: %{(((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100).toFixed(3)}
+                  <div className={(obj.currVolume - obj.ogVolume > 0) ? 'positive' : (obj.currVolume - obj.ogVolume === 0) ? 'otherThing' : 'negative'}> Change in volume in past 24 hours: %{(((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100).toFixed(3)}
                 </div>
                 <button key={i} onClick={()=>this.currencyAdded(obj)}>Add To Personalized View</button>
               </div> )}
+            </div>
             </div>
             <div className="personalcontainer">
               <p>You are personally tracking {personal2.length} currencies that match your query. </p>
@@ -400,16 +404,18 @@ async componentWillMount(){
         <button onClick={()=>this.setState({personalOption: ''})}>All</button>
       </div>
               <input type='text' className='filter' onChange={(e)=> this.setState({personalsearch: e.target.value})} placeholder='Search' />
+              <div className='theInfo'>
               {personal2.map((obj)=>
                 <div className="thing" key={obj.symbol}>
                   <div className='info'>
                     <div className='symbol'>{obj.symbol}:
                     </div> Current Volume: {obj.currVolume}
                   </div>
-                  <div className='otherThing'> Change in volume in past 24 hours: %{(((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100).toFixed(3)}
+                  <div className={(obj.currVolume - obj.ogVolume > 0) ? 'positive' : (obj.currVolume - obj.ogVolume === 0) ? 'otherThing' : 'negative'}> Change in volume in past 24 hours: %{(((obj.currVolume-obj.ogVolume)/(obj.ogVolume))* 100).toFixed(3)}
                 </div>
                 <button onClick={() => this.handleShow(obj)}>View</button>
               </div> )}
+            </div>
               <div className="static-modal">
                 <Modal show={this.state.show} obj={this.state.obj} onHide={() => this.handleHide(obj)}>
                   <Modal.Header>
@@ -418,11 +424,18 @@ async componentWillMount(){
                   <Modal.Body>
                     <form>
                       <FormGroup controlId="formBasicText">
-
+                        <h4>Get notified by text:</h4>
+                        <FormControl
+                          type="date"
+                        />
+                        <FormControl
+                          type="time"
+                        />
                           </FormGroup>
                           <Button onClick={()=>this.setState({show: false, obj: ''})}>Close</Button>
                           <Button onClick={()=>this.currencyRemoved(this.state.obj)}>Remove</Button>
-                          {/* <Button onClick={makeitdosometwilioshit} >Notify</Button> */}
+                          <Button>Set</Button>
+                           {/* make the set button close the modal, and set a timer to text you do some shit   */}
                         </form>
                       </Modal.Body>
                 </Modal>

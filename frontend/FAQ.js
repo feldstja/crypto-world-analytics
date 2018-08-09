@@ -16,6 +16,7 @@ export default class Faq extends React.Component {
       </div>
       <div>
         <h1>Frequently Asked Questions</h1>
+        <div className="faq">
         <h4><b>1. How much should I put into it?</b></h4>
         <p><i>A good rule of thumb is you should put however much you can afford to lose. This is not because you are going to lose it, but because you should not be relying on the money made from this. Your life should not change based on your losses in crypto. </i></p>
         <h4><b>2. Should I trade or hold?</b></h4>
@@ -31,6 +32,7 @@ export default class Faq extends React.Component {
         It is all based on preference. It would be wise to pull money out occasionally to claim your profits, but you can take out all of your money if you please. However, imagine how the people who pulled out all of their money investing in Bitcoin back in 2011 feel today... </i></p>
         <h4><b>7. What are mistakes that everyone makes when trading?</b></h4>
         <p><i>The biggest mistake people make in my opinion is letting their emotions get to them. The crypto market is very volatile, and if you want to see your coins moon, then you also have to deal with the big dips. It is important to learn self-control and patience when trading crypto. Treat each mistake as a learning experience. Even better, learn from others' mistakes to save you time AND money.  </i></p>
+      </div>
       </div>
     </div>
     )

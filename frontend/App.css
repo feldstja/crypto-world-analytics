@@ -30,6 +30,7 @@
 .page {
  margin-right: 100px;
  margin-left: 100px;
+ min-width: 1000px
 }
 
 .welcome {
@@ -56,15 +57,15 @@
  padding: 2px;
  margin-right: 20px;
  margin-left: 20px;
- background-color: skyblue;
+ background-color: #262626;
 }
 
 .thing:hover {
- background-color: aqua;
+ background-color: #939598;
 }
 
 .otherThing {
- color: red;
+ color: white;
 }
 
 .symbol {
@@ -72,7 +73,8 @@
 }
 
 .info {
- display: inline
+ display: inline;
+ color: white;
 }
 
 .sorting {
@@ -85,10 +87,16 @@
  margin: 50px;
  align-items: center;
  justify-content: center;
- overflow-y: scroll;
- height: 400px;
- margin-bottom: 25px;
+ height: 450px;
+ margin-bottom: 15px;
  width: 500px;
+}
+
+.theInfo {
+  height: 285px;
+  width: 500px;
+  overflow-y: scroll;
+  padding-right: 22px;
 }
 
 .currencydisplay {
@@ -105,8 +113,8 @@
  align-items: center;
  justify-content: center;
  overflow-y: scroll;
- height: 400px;
- margin-bottom: 25px;
+ height: 450px;
+ margin-bottom: 15px;
  width: 500px;
 }
 
@@ -247,6 +255,14 @@ background-color: black;
   align-items: center;
   justify-content: center;
   padding: 2px;
+  min-width: 15px
+}
+
+.faq {
+  border: 1px solid black;
+  padding: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .coinmarketcap {
@@ -303,4 +319,12 @@ background-color: black;
   width: 90%;
   align-items: center;
   justify-content: center;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
 }
