@@ -248,6 +248,7 @@ async componentWillMount(){
     array = array.sort((a, b)=> (b.currVolume-b.ogVolume)/(b.ogVolume) - (a.currVolume-a.ogVolume)/(a.ogVolume))
     array = array.filter((a) => !isNaN(a.currVolume/a.ogVolume))
     array = array.filter((a) => a.ogVolume !== 0)
+    array = array.filter((a) => a.currVolume > .005)
 
     if (this.state.search.length) {
       array = array.filter((a)=> a.symbol.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)
