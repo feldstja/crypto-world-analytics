@@ -54,7 +54,8 @@ async componentWillMount(){
   currencyRemoved(obj) {
     var thing = obj
     alert(`You're no longer tracking ${thing}.`)
-    this.props.socket.emit('remove', obj)
+    this.props.socket.emit('remove', thing)
+    console.log(thing)
   }
 
   handleShow(obj) {

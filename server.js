@@ -133,13 +133,13 @@ socket.on('add', (data) => {
 //  })
 
 socket.on('remove', (data) => {
-      let removedIndex = socket.user.FocusedCurrencies.indexOf(data.symbol)
+      let removedIndex = socket.user.FocusedCurrencies.indexOf(data)
       socket.user.FocusedCurrencies.splice(removedIndex, 1)
       socket.user.save(function(err, user) {
         if (err) {
           console.log("Error: " + err)
         } else {
-          console.log(`User no longer tracking ${data.symbol}.`);
+          console.log(`User no longer tracking ${data}.`);
           socket.emit('removalSuccess', removedIndex)
         }
       })
